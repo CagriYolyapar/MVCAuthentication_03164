@@ -1,0 +1,42 @@
+﻿@model LoginPageVM
+
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<h1 style="color:red">@ViewBag.Message</h1>
+
+<div class="container">
+    <div class="card card-primary">
+        Giriş sayfası
+    </div>
+
+    <div>
+        @using (Html.BeginForm())
+        {
+                <div>
+                    @Html.TextBoxFor(x => x.AppUser.UserName, new {placeholder="Kullanıcı ismi giriniz",@class="form-control"})
+                </div>
+
+                <div>
+                    @Html.PasswordFor(x => x.AppUser.Password, new { placeholder = "Sifre giriniz",@class="form-control"})
+                </div>
+
+                <div>
+                    <button class="btn btn-primary">
+                        Login
+                    </button>
+                </div>
+
+        }
+    </div>
+
+
+
+
+</div>
+
